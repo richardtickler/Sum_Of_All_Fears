@@ -22,7 +22,7 @@
     <!-- Navigation -->
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark static-top">
         <div class="container">
-            <a class="navbar-brand" href="/Index.html">Challenge Name Here</a>
+            <a class="navbar-brand" href="/Index.html">Sum of All Fears</a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
@@ -75,6 +75,7 @@
         <hr />
 
         <div class="row">
+            <div class="col"><input class="txtWide" id="mthInputk" placeholder="Enter K value" /></div>
             <div class="col"><input class="txtWide" id="mthInput1" placeholder="Enter number 1" /></div>
             <div class="col"><input class="txtWide" id="mthInput2" placeholder="Enter number 2" /></div>
             <div class="col"><input class="txtWide" id="mthInput3" placeholder="Enter number 3" /></div>
@@ -89,112 +90,77 @@
 
         <div class="row">
             <div class="col">
-                <button id="btnMathClear" class="btn btn-success btnWide">Clear</button>
+                <button id="btnMathClear" class="btnMarg btn-success btnWide">Clear</button>
             </div>
+                
         </div>
-
-
 
         <hr />
 
+        
+</div>
+    
+    <div class="column">
         <div class="row">
             <div class="offset-1 col-10">
-                <table id="tblMath" class="table">
-                    <tr>
-                        <th>Sum</th>
-                        <th>Product</th>
-                        <th>Average</th>
-                        <th>Largest</th>
-                        <th>Smallest</th>
-                    </tr>
-                    <tr>
-                        <td id="out1"></td>
-                        <td id="out2"></td>
-                        <td id="out3"></td>
-                        <td id="out4"></td>
-                        <td id="out5"></td>
-                    </tr>
-                </table>
+                <p id="txtOutput"></p>
             </div>
-        </div>
 
+            
+         </div>
     </div>
-
     <!-- Bootstrap core JavaScript -->
-    <script src="//code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
-    <script src="//cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
-    <script src="//stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
+            <script src="//code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+            <script src="//cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+            <script src="//stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
 
-    <script>
-
-        //I want to HIDE the tables until its time to be shown
-        //$("#tblMath").hide();
-
-        //Step 1: Use jquery to wireup a click event handler to the button
-        $("#btnMath").on("click", function () {
-
-            //Step 2: Collect the user data
-            let num1 = Number($("#mthInput1").val());
-            let num2 = Number($("#mthInput2").val());
-            let num3 = Number($("#mthInput3").val());
-            let num4 = Number($("#mthInput4").val());
-            let num5 = Number($("#mthInput5").val());
-
-            //Lets make sure all of the inputs are numbers
-            if (isNaN(num1) || isNaN(num2) || isNaN(num3) || isNaN(num4) || isNaN(num5)) {
-                alert("Please only enter numbers...");
-                ClearMathInputs();
-                return;
-            }
+            <script>
 
 
+                //Step 1: Use jquery to wireup a click event handler to the button
+                $("#btnMath").on("click", function () {
 
-            //Step 3: Making the calculations using the user data
-            let sum = num1 + num2 + num3 + num4 + num5;
-            let product = num1 * num2 * num3 * num4 * num5;
-            let avg = sum / 5;
+                    //Step 2: Collect the user data
 
-            let largest = Math.max(num1, num2, num3, num4, num5);
-            let smallest = Math.min(num1, num2, num3, num4, num5);
+                    let k = parseInt($("#mthInputk").val());
+                    let num1 = parseInt($("#mthInput1").val());
+                    let num2 = parseInt($("#mthInput2").val());
+                    let num3 = parseInt($("#mthInput3").val());
+                    let num4 = parseInt($("#mthInput4").val());
+                    let num5 = parseInt($("#mthInput5").val());
 
+                    let array = new Array();
+                    array.push(num1);
+                    array.push(num2);
+                    array.push(num3);
+                    array.push(num4);
+                    array.push(num5);
 
-            //Step 4: Out the results to the user
-            $("#out1").text(sum);
-            $("#out2").text(product);
-            $("#out3").text(avg);
-            $("#out4").text(largest);
-            $("#out5").text(smallest);
+                    let message = "";
 
-            //Make the table visible again
-            $("#tblMath").show();
+                    //for (number in array) {
+                    for (let index = 0; index < array.length - 1; index++) {
 
-        });
+                        if (array[index] > k)
+                            continue;
 
-        $("#btnMathClear").on("click", function () {
-            //Clear all the input fields using jQuery
-            //$("#mthInput1, #mthInput2, #mthInput3, #mthInput4, #mthInput5").val("");
-            $("#out1, #out2, #out3, #out4, #out5").text("");
+                        let solution = k - array[index];
 
-            //Rehide the table
-            $("#tblMath").hide();
-        });
+                        if (array.indexOf(solution, index + 1) > -1) {
+                            message = `A solution was found for a K value of ${k}`;
+                            break;
+                        }
+                        else {
+                            message = `No solution for a K value of ${k} was found`;
+                        }
+                    }
 
-        function ClearMathInputs() {
-            $("#mthInput1, #mthInput2, #mthInput3, #mthInput4, #mthInput5").val("");
-        }
+                    $("#txtOutput").text(message);
 
-        $("#mthInput1, #mthInput2, #mthInput3, #mthInput4, #mthInput5").on("keydown", function (e) {
-            let goodRange1 = e.keyCode >= 48 && e.keyCode <= 57;
-            let goodRange2 = e.keyCode >= 96 && e.keyCode <= 105;
-            let isTab = e.keyCode == 9;
+                }
+                    )
 
-            return goodRange1 || goodRange2 || isTab;
-        });
-
-        function CheckNumbersOnly(char) {
-
-        }
-    </script>
+            </script>
 
 </body>
 
