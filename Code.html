@@ -20,13 +20,13 @@
     <!-- Navigation -->
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark static-top">
         <div class="container">
-            <a class="navbar-brand" href="/Index.html">Challenge Name Here</a>
+            <a class="navbar-brand" href="/Index.html">Sum of All Fears</a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarResponsive">
                 <ul class="navbar-nav ml-auto">
-                    <li class="nav-item active">
+                    <li class="nav-item">
                         <a class="nav-link" href="/Index.html">
                             Home
                         </a>
@@ -34,11 +34,11 @@
                     <li class="nav-item">
                         <a class="nav-link" href="/Solve.html">Solve</a>
                     </li>
-                    <li class="nav-item">
+                    <li class="nav-item active">
                         <a class="nav-link" href="/Code.html">Code</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">Git</a>
+                        <a class="nav-link" href="https://github.com/richardtickler/Sum_Of_All_Fears" target="_blank">Git</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="#">Portfolio</a>
@@ -67,6 +67,7 @@
             <div class="col-10 offset-1">
                 <pre>
                     <code class="language-js">
+
                         //Step 1: Use jquery to wireup a click event handler to the button
                         $("#btnMath").on("click", function () {
 
@@ -107,6 +108,13 @@
 
                         $("#txtOutput").text(message);
 
+                        }
+                        )
+
+
+                        $("#btnMathClear").on("click", function () {
+
+                        $("#txtOutput").text("");
                         }
                         )
                     </code>
