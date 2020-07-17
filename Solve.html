@@ -58,6 +58,14 @@
         .btnWide{
             width:100%
         }
+
+        .btn01 {
+            background-color: #33ccff
+        }
+
+        .btn02 {
+            background-color: #66ff66
+        }
     </style>
 
 
@@ -77,45 +85,44 @@
     </div>
 
     <div class="container">
-        
-
+        <div class="row offset-1">
+            <div class="row"><input class="txtWide active" id="mthInputk" placeholder="Enter K Value" /></div>
+            <div class="row"><input class="txtWide" id="mthInput1" placeholder="Enter number 1" /></div>
+            <div class="row"><input class="txtWide" id="mthInput2" placeholder="Enter number 2" /></div>
+            <div class="row"><input class="txtWide" id="mthInput3" placeholder="Enter number 3" /></div>
+            <div class="row"><input class="txtWide" id="mthInput4" placeholder="Enter number 4" /></div>
+            <div class="row"><input class="txtWide" id="mthInput5" placeholder="Enter number 5" /></div>
+        </div>
         <hr />
 
         <div class="row">
-            <div class="col"><input class="txtWide" id="mthInputk" placeholder="Enter K Value" /></div>
-            <div class="col"><input class="txtWide" id="mthInput1" placeholder="Enter number 1" /></div>
-            <div class="col"><input class="txtWide" id="mthInput2" placeholder="Enter number 2" /></div>
-            <div class="col"><input class="txtWide" id="mthInput3" placeholder="Enter number 3" /></div>
-            <div class="col"><input class="txtWide" id="mthInput4" placeholder="Enter number 4" /></div>
-            <div class="col"><input class="txtWide" id="mthInput5" placeholder="Enter number 5" /></div>
-        </div>
-        <div class="row">
             <div class="col">
-                <button id="btnMath" class=" btnMarg btn btn-primary btnWide">Calculate</button>
+                <button id="btnMath" class=" btnMarg btn01 btnWide">Calculate</button>
             </div>
         </div>
 
         <div class="row">
             <div class="col">
-                <button id="btnMathClear" class="btnMarg btn-success btnWide">Clear</button>
+                <button id="btnMathClear" class="btnMarg btn02 btnWide">Clear</button>
             </div>
-                
+
         </div>
 
         <hr />
 
-        
-</div>
-    
-    <div class="column">
-        <div class="row">
-            <div class="offset-1 col-10">
-                <p id="txtOutput"></p>
-            </div>
+        <div class="column">
+            <div class="row">
+                <div class="offset-1 col-10 text-xl-center">
+                    <p id="txtOutput"></p>
+                </div>
 
-            
-         </div>
+
+            </div>
+        </div>
+
     </div>
+    
+    
     <!-- Bootstrap core JavaScript -->
             <script src="//code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
             <script src="//cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
@@ -165,9 +172,18 @@
                     $("#txtOutput").text(message);
 
                 }
-                    )
+                )
+
 
             </script>
+
+    <script>
+        $("#btnMathClear").on("click", function () {
+
+            $("#txtOutput").text("");
+        }
+        )
+    </script>
 
 </body>
 
